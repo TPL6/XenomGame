@@ -1,0 +1,22 @@
+{
+  "name": "vertical-xenon-2000",
+  "version": "1.0.0",
+  "dependencies": [
+    "sdl3",
+    "box2d",
+    "glm",
+    {
+      "name": "glad",
+      "features": [
+        "gl-api-33"
+      ]
+    }
+  ],
+  "overrides": [
+    {
+      "name": "box2d",
+      "version": "3.2.0"
+    }
+  ],
+  "builtin-baseline": "d4c0a46cb8f63e5c9fa007d13baf1cb3e43bf7e3"
+}

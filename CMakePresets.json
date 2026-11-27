@@ -1,0 +1,44 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name": "default",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+      }
+    },
+    {
+      "name": "asan",
+      "displayName": "AddressSanitizer",
+      "inherits": "default",
+      "binaryDir": "${sourceDir}/build-asan",
+      "cacheVariables": {
+        "ENGINE_ENABLE_ASAN": "ON"
+      }
+    },
+    {
+      "name": "xcode",
+      "inherits": "default",
+      "generator": "Xcode",
+      "binaryDir": "${sourceDir}/build-xcode"
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "debug",
+      "configurePreset": "default",
+      "configuration": "Debug"
+    },
+    {
+      "name": "release",
+      "configurePreset": "default",
+      "configuration": "Release"
+    },
+    {
+      "name": "asan",
+      "configurePreset": "asan",
+      "configuration": "Debug"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# CMake / vcpkg
+build*/
+out/
+vcpkg_installed/
+CMakeUserPresets.json
+
+# IDEs
+.vs/
+.vscode/*
+*.xcodeproj/
+xcuserdata/
+DerivedData/
+
+# OS
+Thumbs.db
+.DS_Store

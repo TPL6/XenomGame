@@ -2,11 +2,13 @@
 
 #include "AssetPath.h"
 
+#include <cstddef>
 #include <fstream>
 #include <glad/glad.h>
 #include <glm/gtc/type_ptr.hpp>
 #include <iostream>
 #include <sstream>
+#include <utility>
 
 Shader::Shader(std::string_view vertexPath, std::string_view fragmentPath) {
     const std::string vertSource = loadFile(vertexPath);

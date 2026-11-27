@@ -3,6 +3,7 @@
 #include "AssetPath.h"
 
 #include <SDL3/SDL.h>
+#include <cstddef>
 #include <cstdint>
 #include <glad/glad.h>
 #include <iostream>

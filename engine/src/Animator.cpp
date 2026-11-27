@@ -2,6 +2,8 @@
 #include "engine/SpriteSheet.h"
 
 #include <algorithm>
+#include <cstddef>
+#include <utility>
 
 namespace {
     constexpr UVRect kFullUV{ 0.0f, 0.0f, 1.0f, 1.0f };

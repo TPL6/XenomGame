@@ -12,6 +12,7 @@
 #include "engine/ResourceManager.h"
 
 #include <glm/geometric.hpp>
+#include <utility>
 
 namespace {
 

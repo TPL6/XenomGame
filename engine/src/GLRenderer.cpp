@@ -102,7 +102,7 @@ void GLRenderer::initQuadGeometry() {
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(
         0, 2, GL_FLOAT, GL_FALSE,
-        4 * sizeof(float), reinterpret_cast<const void*>(0)
+        4 * sizeof(float), nullptr
     );
 
     glEnableVertexAttribArray(1);

@@ -9,7 +9,9 @@
 
 #include <SDL3/SDL.h>
 #include <algorithm>
+#include <memory>
 #include <stdexcept>
+#include <utility>
 
 struct Engine::Impl {
     explicit Impl(const EngineConfig& cfg)

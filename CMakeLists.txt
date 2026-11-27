@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(vertical_xenon_2000 LANGUAGES CXX)
+project(vertical_xenon_2000 LANGUAGES C CXX)
 
 # C++20 strictly (no compiler-specific extensions) across all targets.
 set(CMAKE_CXX_STANDARD 20)

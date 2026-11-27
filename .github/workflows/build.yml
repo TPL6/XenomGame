@@ -8,7 +8,7 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install vcpkg
         shell: pwsh
@@ -20,22 +20,28 @@ jobs:
       - name: Configure
         run: cmake --preset default
 
-      - name: Build
+      - name: Build (Debug)
+        run: cmake --build --preset debug
+
+      - name: Build (Release)
         run: cmake --build --preset release
 
   build-linux:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Install SDL3/OpenGL build dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            autoconf automake libtool pkg-config \
-            libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxi-dev \
-            libxss-dev libxkbcommon-dev libwayland-dev \
-            libegl1-mesa-dev libgl1-mesa-dev
+            build-essential ninja-build pkg-config \
+            autoconf automake libtool \
+            libx11-dev libxft-dev libxext-dev libxrandr-dev libxcursor-dev \
+            libxfixes-dev libxi-dev libxinerama-dev libxss-dev libxtst-dev \
+            libxkbcommon-dev libwayland-dev wayland-protocols \
+            libegl1-mesa-dev libgl1-mesa-dev \
+            libdbus-1-dev libibus-1.0-dev
 
       - name: Install vcpkg
         run: |

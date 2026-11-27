@@ -1,8 +1,21 @@
 #include "GLContext.h"
 #include "Window.h"
 
+#include <cstring>
 #include <glad/glad.h>
 #include <iostream>
+
+namespace {
+
+    void* loadGLProc(const char* name) {
+        const SDL_FunctionPointer proc = SDL_GL_GetProcAddress(name);
+        void* address = nullptr;
+        static_assert(sizeof(address) == sizeof(proc));
+        std::memcpy(&address, &proc, sizeof(address));
+        return address;
+    }
+
+} // namespace
 
 GLContext::GLContext(const Window& window, bool vsync) {
     if (!window.isValid()) {
@@ -23,7 +36,7 @@ GLContext::GLContext(const Window& window, bool vsync) {
         return;
     }
 
-    if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(SDL_GL_GetProcAddress))) {
+    if (!gladLoadGLLoader(loadGLProc)) {
         std::cerr << "GLContext: failed to initialize GLAD\n";
         release();
         return;

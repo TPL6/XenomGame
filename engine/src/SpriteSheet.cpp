@@ -1,6 +1,7 @@
 #include "engine/SpriteSheet.h"
 
 #include <algorithm>
+#include <cstddef>
 #include <cstdint>
 #include <iostream>
 #include <unordered_map>

@@ -62,6 +62,17 @@ cd vcpkg
 echo 'export VCPKG_ROOT="$HOME/vcpkg"' >> ~/.zshrc   # or ~/.bashrc
 ```
 
+**Ubuntu / Debian Linux (one-time X11 / Wayland / IBus headers required by vcpkg's SDL3 port):**
+```bash
+sudo apt-get update
+sudo apt-get install -y \
+  build-essential ninja-build pkg-config autoconf automake libtool \
+  libx11-dev libxft-dev libxext-dev libxrandr-dev libxcursor-dev \
+  libxfixes-dev libxi-dev libxinerama-dev libxss-dev libxtst-dev \
+  libxkbcommon-dev libwayland-dev wayland-protocols \
+  libegl1-mesa-dev libgl1-mesa-dev libdbus-1-dev libibus-1.0-dev
+```
+
 Restart your terminal/IDE after setting `VCPKG_ROOT`.
 
 ---
@@ -72,6 +83,8 @@ From a clean clone of the repository:
 
 ### Windows (PowerShell)
 ```powershell
+git clone https://github.com/TPL6/XenomGame.git
+cd XenomGame
 cmake --preset default
 cmake --build --preset debug
 .\build\game\Debug\xenon2000.exe

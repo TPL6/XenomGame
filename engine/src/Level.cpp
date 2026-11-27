@@ -4,6 +4,7 @@
 #include "engine/ResourceManager.h"
 
 #include <algorithm>
+#include <cstddef>
 
 Level::Level(
     glm::vec2 gravityMetersPerSec2,

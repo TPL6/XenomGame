@@ -12,6 +12,8 @@
 #include "engine/ResourceManager.h"
 #include "engine/SpriteSheet.h"
 
+#include <utility>
+
 namespace {
 
     void destroyMissile(Actor* actor) {

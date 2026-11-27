@@ -1,5 +1,7 @@
 #include "engine/Actor.h"
 
+#include <utility>
+
 void Actor::setSprite(
     TextureHandle texture,
     glm::vec2 quadSize,
